@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Campaign: {{ campaign.name }}</h2>
+<p>Total Targets: {{ total_targets }}</p>
+<table>
+  <tr><th>Event Type</th><th>Count</th></tr>
+  {% for k,v in data.items() %}
+  <tr><td>{{ k }}</td><td>{{ v }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

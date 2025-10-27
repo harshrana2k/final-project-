@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Phishing Simulation Campaigns</h1>
+<table>
+  <tr><th>ID</th><th>Name</th><th>Description</th><th>Actions</th></tr>
+  {% for c in campaigns %}
+  <tr>
+    <td>{{ c.id }}</td>
+    <td>{{ c.name }}</td>
+    <td>{{ c.description }}</td>
+    <td>
+      <a href="{{ url_for('dashboard', campaign_id=c.id) }}">📊 Dashboard</a> |
+      <a href="{{ url_for('send_test', campaign_id=c.id) }}">✉️ Send Test</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

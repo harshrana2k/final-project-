@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Create Campaign</h2>
+<form method="post">
+  <label>Campaign Name:</label><input name="name" required><br>
+  <label>Description:</label><input name="description"><br>
+  <label>Sender Name:</label><input name="sender_name" required><br>
+  <label>Sender Email:</label><input name="sender_email" required><br>
+  <label>Template:</label>
+  <select name="template_id">
+    {% for t in templates %}
+      <option value="{{ t.id }}">{{ t.name }}</option>
+    {% endfor %}
+  </select><br>
+  <button type="submit">Create</button>
+</form>
+{% endblock %}
